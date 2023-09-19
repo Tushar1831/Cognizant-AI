@@ -46,7 +46,7 @@ def load_data(filename: str):
     
     return df
  
- def create_target_variable(data: pd.DataFrame, target: str):
+def create_target_variable(data: pd.DataFrame, target: str):
      """_summary_
 
      Args:
@@ -59,7 +59,7 @@ def load_data(filename: str):
      
      return X, y
  
- def train_model(X: pd.DataFrame, y: pd.Series):
+def train_model(X: pd.DataFrame, y: pd.Series):
      """_summary_
 
      Args:
@@ -81,7 +81,7 @@ def load_data(filename: str):
         X_test = scaler.transform(X_test)
         
         #Train Model
-        training_model = model.fit(X_train, y_train)
+        trained_model = model.fit(X_train, y_train)
         
         #predictions
         y_pred = trained_model.predict(X_test)
@@ -91,7 +91,7 @@ def load_data(filename: str):
         accuracy.append(mae)
         print(f"Fold {i + 1}: MAE = {mae:.3f}")
     
-    print(f"Average MAE: {(sum(accuracy) / len(accuracy)):.3f}")
+print(f"Average MAE: {(sum(accuracy) / len(accuracy)):.3f}")
         
         
 # --- 4) MAIN FUNCTION
